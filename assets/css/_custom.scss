@@ -67,17 +67,17 @@
 }
 /* 文章背景色 */
 .page {
-    padding: 0 2rem;
 	background-color: white;
 	opacity: .85;
 }
 [theme=dark] .page {
     background-color: black;
 }
+
 /* 文章正文 */
 .page.single .content p {
     margin: 1rem 0;
-    padding: 0 1rem;
+    padding: 0 3rem;
 }
 
 /* 文章脚部 */
@@ -240,10 +240,13 @@ hr {
     border-style: none;
     border-color: initial;
     border-image: initial;
-    padding: 7px;
-    margin: 18px 0px 18px -5px !important;
+    padding: 6px;
+	padding-left: 1rem;
+    margin: 18px 0px 18px 0px !important;
 }
-
+.page.single h3 {
+	padding-left: 2rem;
+}
 
 
 
