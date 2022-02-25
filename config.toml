@@ -88,7 +88,7 @@ theme = "LoveIt"
   # LoveIt 新增 | 0.2.0 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "LoveIt"
+    title = "りもカフェ"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -228,7 +228,7 @@ theme = "LoveIt"
     # LoveIt 新增 | 0.2.0 是否使用 fontawesome 扩展语法
     fontawesome = true
     # 是否在文章页面显示原始 Markdown 文档链接
-    linkToMarkdown = true
+    linkToMarkdown = false
     # LoveIt 新增 | 0.2.4 是否在 RSS 中显示全文内容
     rssFullText = false
     # LoveIt 新增 | 0.2.0 目录配置
@@ -276,7 +276,7 @@ theme = "LoveIt"
       fullscreen = true
     # LoveIt 更改 | 0.2.0 文章页面的分享信息设置
     [params.page.share]
-      enable = true
+      enable = false
       Twitter = true
       Facebook = true
       Linkedin = false
