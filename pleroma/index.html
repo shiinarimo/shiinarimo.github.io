@@ -5,7 +5,7 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Pleroma的安装、初步设置、数据备份 - りもカフェコーナー</title><meta name=Description content="个人 Hugo 网站"><meta property="og:title" content="Pleroma的安装、初步设置、数据备份">
-<meta property="og:description" content="原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文">
+<meta property="og:description" content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://example.org/pleroma/"><meta property="og:image" content="http://example.org/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-03-23T00:00:00+00:00">
@@ -13,11 +13,11 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://example.org/logo.png">
 <meta name=twitter:title content="Pleroma的安装、初步设置、数据备份">
-<meta name=twitter:description content="原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文">
+<meta name=twitter:description content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官">
 <meta name=application-name content="りもカフェ">
 <meta name=apple-mobile-web-app-title content="りもカフェ"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/pleroma/><link rel=prev href=http://example.org/using/><link rel=next href=http://example.org/first_post/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pleroma的安装、初步设置、数据备份","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/example.org\/pleroma\/"},"genre":"posts","keywords":"折腾笔记","wordcount":3753,"url":"http:\/\/example.org\/pleroma\/","datePublished":"2021-03-23T00:00:00+00:00","dateModified":"2021-03-23T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"rimo"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/pleroma/><link rel=prev href=http://example.org/using/><link rel=next href=http://example.org/first_post/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pleroma的安装、初步设置、数据备份","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/example.org\/pleroma\/"},"genre":"posts","keywords":"折腾笔记","wordcount":3755,"url":"http:\/\/example.org\/pleroma\/","datePublished":"2021-03-23T00:00:00+00:00","dateModified":"2021-03-23T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"rimo"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -105,9 +105,9 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class="toc-content always-active" id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Pleroma的安装、初步设置、数据备份</h1><h2 class=single-subtitle>过时警告</h2><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">Pleroma的安装、初步设置、数据备份</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>rimo</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%AE%B0%E5%BD%95/><i class="far fa-folder fa-fw"></i>记录</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-23>2021-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3753 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-23>2021-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3755 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -137,8 +137,17 @@
 </ul>
 </nav></div>
 </div><div class=content id=content><font size=3>
->原文写于2021年3月23日 内容可能已经过时,仅作为原文备份
->图片也丢了
+<div class="details admonition warning open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><p>原文写于2021年3月23日</p>
+<p>内容可能已经过时,仅作为原文备份</p>
+<p>图片也丢了</p>
+</div>
+</div>
+</div>
 <p>本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文档和issue也有一些过时的信息。</p>
 <h2 id=1>1.</h2>
 <p>丢了没了懒得改了,总之就是提醒不要用国内的域名商</p>
@@ -520,8 +529,7 @@ Bucket namespace的内容,即文件上传到存储桶的目录。如填写media,
 </div>
 <div id=comments></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>实在没什么东西</div><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>rimo</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+<div class=footer-container><div class=footer-line>实在没什么东西</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>rimo</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>
 <div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
