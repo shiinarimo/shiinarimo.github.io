@@ -274,4 +274,4 @@ sudo -u postgres psql
   + 复制目录及所有文件/var/lib/pleroma/,这里是使用过程中上传文件、表情包等默认存放位置 
   + (可选)复制/etc/nginx/sites-available/pleroma.conf 
 
-  因为除了Pleroma外操作很少,备份和恢复操作我大多是继续使用VPS的Snapshots功能 所以恢复方面未实际操作过,就不写了,链接[官方文档 ](http://https://docs-develop.pleroma.social/backend/administration/backup/)
+  因为除了Pleroma外操作很少,备份和恢复操作我大多是继续使用VPS的Snapshots功能 所以恢复方面未实际操作过,就不写了,链接[官方文档 ](https://docs-develop.pleroma.social/backend/administration/backup/)
