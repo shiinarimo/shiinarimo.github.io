@@ -32,14 +32,14 @@ jobs:
           publish_dir: ./public
           keep_files: true
 
-      - name: Write File
+  #    - name: Write File
   # You may pin to the exact commit or the version.
   # uses: DamianReeves/write-file-action@e19fd875ed54f16fc583a3486e62547ce4a5dde8
-        uses: DamianReeves/write-file-action@v1.0
-        with:
+  #      uses: DamianReeves/write-file-action@v1.0
+  #      with:
     # The path to the file to write
-          path: ./CNAME
+  #        path: ./CNAME
     # The contents of the file
-          contents: blog.shiina-rimo.cafe
+  #        contents: blog.shiina-rimo.cafe
     # The mode of writing to use: `overwrite`, `append`, or `preserve`.
-          write-mode: overwrite
+  #        write-mode: overwrite
