@@ -1,6 +1,5 @@
 ---
 title: "Pleroma的安装、初步设置、数据备份"
-subtitle: "过时警告"
 date: 2021-03-23
 lastmod: 2021-03-23
 author: "rimo"
@@ -12,8 +11,14 @@ hiddenFromSearch: false
 
 ---
 <font size=3>
->原文写于2021年3月23日 内容可能已经过时,仅作为原文备份
->图片也丢了
+{{< admonition warning >}}
+原文写于2021年3月23日 
+  
+内容可能已经过时,仅作为原文备份
+  
+图片也丢了
+{{< /admonition >}}
+
 
 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文档和issue也有一些过时的信息。
 
