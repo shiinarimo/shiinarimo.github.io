@@ -1,5 +1,5 @@
 ---
-title: "记一次CFA报错份"
+title: "记一次CFA报错"
 date: 2022-03-02
 lastmod: 2022-03-02
 author: "rimo"
