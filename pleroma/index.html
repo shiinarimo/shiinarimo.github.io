@@ -1,130 +1,21 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Pleroma的安装、初步设置、数据备份 - りもカフェコーナー</title><meta name=Description content="个人 Hugo 网站"><meta property="og:title" content="Pleroma的安装、初步设置、数据备份">
-<meta property="og:description" content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://example.org/pleroma/"><meta property="og:image" content="http://example.org/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-03-23T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-03-23T00:00:00+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="http://example.org/logo.png">
-<meta name=twitter:title content="Pleroma的安装、初步设置、数据备份">
-<meta name=twitter:description content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官">
-<meta name=application-name content="りもカフェ">
-<meta name=apple-mobile-web-app-title content="りもカフェ"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/pleroma/><link rel=prev href=http://example.org/using/><link rel=next href=http://example.org/first_post/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pleroma的安装、初步设置、数据备份","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/example.org\/pleroma\/"},"genre":"posts","keywords":"折腾笔记","wordcount":3755,"url":"http:\/\/example.org\/pleroma\/","datePublished":"2021-03-23T00:00:00+00:00","dateModified":"2021-03-23T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"rimo"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=りもカフェコーナー>りもカフェコーナー</a>
-</div><div class=menu>
-<div class=menu-inner>
-<div class=dropdown>
-<a href=javascript:void(0); class="menu-item menu-more dropbtn" title> 工具导航
-</a>
-<div class="menu-more-content dropdown-content"><a href=https://speed.dler.io/ title><i class="fas fa-fw fa-th"></i> dler测速 </a></div></div><div class=dropdown>
-<a href=/posts/ class="menu-item menu-more dropbtn" title> 文章
-</a>
-<div class="menu-more-content dropdown-content"><a href=/categories/ title><i class="fas fa-fw fa-th"></i> 分类 </a><a href=/tags/ title target=_blank rel=noopener><i class="fas fa-fw fa-tag"></i> 标签 </a></div></div><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Pleroma的安装、初步设置、数据备份 - りもカフェコーナー</title><meta name=Description content="个人 Hugo 网站"><meta property="og:title" content="Pleroma的安装、初步设置、数据备份"><meta property="og:description" content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/pleroma/"><meta property="og:image" content="http://example.org/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-23T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-23T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://example.org/logo.png"><meta name=twitter:title content="Pleroma的安装、初步设置、数据备份"><meta name=twitter:description content="警告 原文写于2021年3月23日 内容可能已经过时,仅作为原文备份 图片也丢了 本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官"><meta name=application-name content="りもカフェ"><meta name=apple-mobile-web-app-title content="りもカフェ"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/pleroma/><link rel=prev href=http://example.org/using/><link rel=next href=http://example.org/first_post/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pleroma的安装、初步设置、数据备份","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/example.org\/pleroma\/"},"genre":"posts","keywords":"折腾笔记","wordcount":3755,"url":"http:\/\/example.org\/pleroma\/","datePublished":"2021-03-23T00:00:00+00:00","dateModified":"2021-03-23T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"rimo"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=りもカフェコーナー>りもカフェコーナー</a></div><div class=menu><div class=menu-inner><div class=dropdown><a href=javascript:void(0); class="menu-item menu-more dropbtn" title>工具导航</a><div class="menu-more-content dropdown-content"><a href=https://speed.dler.io/ title><i class='fas fa-fw fa-th'></i> dler测速</a></div></div><div class=dropdown><a href=/posts/ class="menu-item menu-more dropbtn" title>文章</a><div class="menu-more-content dropdown-content"><a href=/categories/ title><i class='fas fa-fw fa-th'></i> 分类 </a><a href=/tags/ title target=_blank rel=noopener><i class='fas fa-fw fa-tag'></i> 标签</a></div></div><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=りもカフェコーナー>りもカフェコーナー</a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><div class=dropdown>
-<a href=javascript:void(0); class="menu-item menu-more dropbtn" title> 工具导航
-</a>
-<div class="menu-more-content dropdown-content"><a href=https://speed.dler.io/ title><i class="fas fa-fw fa-th"></i> dler测速 </a></div></div><div class=dropdown>
-<a href=/posts/ class="menu-item menu-more dropbtn" title> 文章
-</a>
-<div class="menu-more-content dropdown-content"><a href=/categories/ title><i class="fas fa-fw fa-th"></i> 分类 </a><a href=/tags/ title target=_blank rel=noopener><i class="fas fa-fw fa-tag"></i> 标签 </a></div></div><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2><div class="toc-content always-active" id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Pleroma的安装、初步设置、数据备份</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>rimo</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%AE%B0%E5%BD%95/><i class="far fa-folder fa-fw"></i>记录</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-23>2021-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3755 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#1>1.</a></li><li><a href=#2准备服务器>2.准备服务器</a>
-<ul>
-<li><a href=#21-为服务器准备ssh-key>2.1 为服务器准备SSH key</a></li><li><a href=#22-安全设置>2.2 安全设置</a></li><li><a href=#23-设置域名解析>2.3 设置域名解析</a></li></ul></li><li><a href=#3安装pleroma>3.安装pleroma</a></li><li><a href=#4设置pleroma>4.设置pleroma</a>
-<ul>
-<li><a href=#41-修改pleroma为数据库模式>4.1 修改pleroma为数据库模式</a></li><li><a href=#42-进入admin-fe设置>4.2 进入Admin-FE设置</a></li><li><a href=#43-部署媒体文件外置存储>4.3 部署媒体文件外置存储</a></li><li><a href=#44-设置dns重定向>4.4 设置DNS重定向</a></li></ul></li><li><a href=#5备份pleroma>5.备份pleroma</a></li></ul></nav></div></div><div class=content id=content><font size=3>
-<div class="details admonition warning open">
-<div class="details-summary admonition-title">
-<i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-</div><div class=details-content>
-<div class=admonition-content><p>原文写于2021年3月23日</p><p>内容可能已经过时,仅作为原文备份</p><p>图片也丢了</p></div></div></div><p>本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文档和issue也有一些过时的信息。</p><h2 id=1>1.</h2><p>丢了没了懒得改了,总之就是提醒不要用国内的域名商</p><h2 id=2准备服务器>2.准备服务器</h2><p>示例环境:debian 10 64位</p><h3 id=21-为服务器准备ssh-key>2.1 为服务器准备SSH key</h3><p>网上很多教程是使用ssh-keygen生成密钥,这种生成方式是不能直接用于windows的SSH客户端的,如果你的电脑是windows系统,不建议这么做</p><p><strong>以windows为例,下载PuTTY 并安装</strong></p><hr>
-<ul>
-<li>
-<p>进入PuTTY安装目录,打开puttygen.exe</p><ul>
-<li>
-<p>点击按钮“Generate”。程序会检测鼠标,需要将鼠标在窗口内不停移动进度条才会进展。</p></li><li>
-<p>保存公钥及私钥,上传公钥。私钥用于ssh登录,妥善保管私钥。
-密码登录SSH后上传,对于一些服务器提供商如vultr,也可以从网站面板上传,不如说更推荐这么做。</p></li></ul><ul>
-<li>vultr上传公钥只需复制图中长长的文本部分到网站面板即可。</li></ul></li></ul><p>-上传完成后设置禁止密码登录SSH</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>nano /etc/ssh/sshd_config
-</span></span></code></pre></td></tr></table></div></div><p>去除注释PasswordAuthentication并修改为no</p><p>重启sshd</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart sshd.service
-</span></span></code></pre></td></tr></table></div></div><h3 id=22-安全设置>2.2 安全设置</h3><ul>
-<li>安装 fail2ban 以阻止重复登录尝试</li></ul><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>apt-get install fail2ban
-</span></span></code></pre></td></tr></table></div></div><ul>
-<li>以下内容来自<a href=https://docs.joinmastodon.org/zh-cn/admin/prerequisites/ target=_blank rel="noopener noreffer">长毛象官方文档</a>,照抄即可</li></ul><hr>
-<blockquote>
-<p>编辑/etc/fail2ban/jail.local并添加以下内容:</p></blockquote><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=りもカフェコーナー>りもカフェコーナー</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><div class=dropdown><a href=javascript:void(0); class="menu-item menu-more dropbtn" title>工具导航</a><div class="menu-more-content dropdown-content"><a href=https://speed.dler.io/ title><i class='fas fa-fw fa-th'></i> dler测速</a></div></div><div class=dropdown><a href=/posts/ class="menu-item menu-more dropbtn" title>文章</a><div class="menu-more-content dropdown-content"><a href=/categories/ title><i class='fas fa-fw fa-th'></i> 分类 </a><a href=/tags/ title target=_blank rel=noopener><i class='fas fa-fw fa-tag'></i> 标签</a></div></div><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class="toc-content always-active" id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Pleroma的安装、初步设置、数据备份</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>rimo</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%AE%B0%E5%BD%95/><i class="far fa-folder fa-fw"></i>记录</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-23>2021-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3755 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#1>1.</a></li><li><a href=#2准备服务器>2.准备服务器</a><ul><li><a href=#21-为服务器准备ssh-key>2.1 为服务器准备SSH key</a></li><li><a href=#22-安全设置>2.2 安全设置</a></li><li><a href=#23-设置域名解析>2.3 设置域名解析</a></li></ul></li><li><a href=#3安装pleroma>3.安装pleroma</a></li><li><a href=#4设置pleroma>4.设置pleroma</a><ul><li><a href=#41-修改pleroma为数据库模式>4.1 修改pleroma为数据库模式</a></li><li><a href=#42-进入admin-fe设置>4.2 进入Admin-FE设置</a></li><li><a href=#43-部署媒体文件外置存储>4.3 部署媒体文件外置存储</a></li><li><a href=#44-设置dns重定向>4.4 设置DNS重定向</a></li></ul></li><li><a href=#5备份pleroma>5.备份pleroma</a></li></ul></nav></div></div><div class=content id=content><font size=3><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><p>原文写于2021年3月23日</p><p>内容可能已经过时,仅作为原文备份</p><p>图片也丢了</p></div></div></div><p>本文主要是备忘。关于Pleroma初次安装配置遇到很多的坑,查阅官方文档和issue也有一些过时的信息。</p><h2 id=1>1.</h2><p>丢了没了懒得改了,总之就是提醒不要用国内的域名商</p><h2 id=2准备服务器>2.准备服务器</h2><p>示例环境:debian 10 64位</p><h3 id=21-为服务器准备ssh-key>2.1 为服务器准备SSH key</h3><p>网上很多教程是使用ssh-keygen生成密钥,这种生成方式是不能直接用于windows的SSH客户端的,如果你的电脑是windows系统,不建议这么做</p><p><strong>以windows为例,下载PuTTY 并安装</strong></p><hr><ul><li><p>进入PuTTY安装目录,打开puttygen.exe</p><ul><li><p>点击按钮“Generate”。程序会检测鼠标,需要将鼠标在窗口内不停移动进度条才会进展。</p></li><li><p>保存公钥及私钥,上传公钥。私钥用于ssh登录,妥善保管私钥。
+密码登录SSH后上传,对于一些服务器提供商如vultr,也可以从网站面板上传,不如说更推荐这么做。</p></li></ul><ul><li>vultr上传公钥只需复制图中长长的文本部分到网站面板即可。</li></ul></li></ul><p>-上传完成后设置禁止密码登录SSH</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>nano /etc/ssh/sshd_config
+</span></span></code></pre></td></tr></table></div></div><p>去除注释PasswordAuthentication并修改为no</p><p>重启sshd</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart sshd.service
+</span></span></code></pre></td></tr></table></div></div><h3 id=22-安全设置>2.2 安全设置</h3><ul><li>安装 fail2ban 以阻止重复登录尝试</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>apt-get install fail2ban
+</span></span></code></pre></td></tr></table></div></div><ul><li>以下内容来自<a href=https://docs.joinmastodon.org/zh-cn/admin/prerequisites/ target=_blank rel="noopener noreffer">长毛象官方文档</a>,照抄即可</li></ul><hr><blockquote><p>编辑/etc/fail2ban/jail.local并添加以下内容:</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -133,8 +24,7 @@
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span><span class=lnt>9
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[DEFAULT]
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[DEFAULT]
 </span></span><span class=line><span class=cl>destemail = your@email.here
 </span></span><span class=line><span class=cl>sendername = Fail2Ban
 </span></span><span class=line><span class=cl>[sshd]``
@@ -143,17 +33,9 @@
 </span></span><span class=line><span class=cl>[sshd-ddos]
 </span></span><span class=line><span class=cl>enabled = true
 </span></span><span class=line><span class=cl>port = 22
-</span></span></code></pre></td></tr></table></div></div><hr>
-<p>最后重启fail2ban:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart fail2ban
-</span></span></code></pre></td></tr></table></div></div><ul>
-<li>安装并设置防火墙</li></ul><blockquote>
-<p>长毛象官方文档 中使用的是 iptables-persistent</p></blockquote><p>参考尽量细致的Pleroma搭建教程(仮),建议使用ufw,简单嘛</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><hr><p>最后重启fail2ban:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart fail2ban
+</span></span></code></pre></td></tr></table></div></div><ul><li>安装并设置防火墙</li></ul><blockquote><p>长毛象官方文档 中使用的是 iptables-persistent</p></blockquote><p>参考尽量细致的Pleroma搭建教程(仮),建议使用ufw,简单嘛</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -164,8 +46,7 @@
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>apt-get install ufw
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>apt-get install ufw
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>//默认开启出站关闭入站
 </span></span><span class=line><span class=cl>sudo ufw default allow outcoming
@@ -176,119 +57,47 @@
 </span></span><span class=line><span class=cl>sudo ufw allow 443
 </span></span><span class=line><span class=cl>sudo ufw allow 22
 </span></span><span class=line><span class=cl>ufw enable
-</span></span></code></pre></td></tr></table></div></div><h3 id=23-设置域名解析>2.3 设置域名解析</h3><p>参考长毛象社区搭建详解第二章即可</p><h2 id=3安装pleroma>3.安装pleroma</h2><p>其实关于安装方面,pleroma的官方文档已经足够详尽了,一步一步照抄即可,没什么难度。</p><p>!以下仅说明OTP版本Pleroma,如过是从source安装,可以尝试参考<a href=https://lala.im/6254.html target=_blank rel="noopener noreffer">Pleroma:支持ActivityPub的社交网络服务器</a></p><p>运行到</p><blockquote>
-<p># Create the database schema
-su pleroma -s $SHELL -lc “./bin/pleroma_ctl migrate”</p></blockquote><p>这一步时,安装程序会问很多问题,并以此生成配置文件。只要域名没写错就没什么大问题,大部分后期都可以改。</p><ul>
-<li>个人建议这个阶段不要开启Pleroma in-database,有一定风险,没有必要现在开,调试好了再说</li></ul><hr>
-<p>另外
+</span></span></code></pre></td></tr></table></div></div><h3 id=23-设置域名解析>2.3 设置域名解析</h3><p>参考长毛象社区搭建详解第二章即可</p><h2 id=3安装pleroma>3.安装pleroma</h2><p>其实关于安装方面,pleroma的官方文档已经足够详尽了,一步一步照抄即可,没什么难度。</p><p>!以下仅说明OTP版本Pleroma,如过是从source安装,可以尝试参考<a href=https://lala.im/6254.html target=_blank rel="noopener noreffer">Pleroma:支持ActivityPub的社交网络服务器</a></p><p>运行到</p><blockquote><p># Create the database schema
+su pleroma -s $SHELL -lc “./bin/pleroma_ctl migrate”</p></blockquote><p>这一步时,安装程序会问很多问题,并以此生成配置文件。只要域名没写错就没什么大问题,大部分后期都可以改。</p><ul><li>个人建议这个阶段不要开启Pleroma in-database,有一定风险,没有必要现在开,调试好了再说</li></ul><hr><p>另外
 OTP版安装文档中,编辑nginx config中有这么一句
 $EDITOR path-to-nginx-config
-初见的话有点摸不着头脑,其实就是去编辑上一步操作的/etc/nginx/pleroma.conf</p><p>按文档走完,访问域名就可以看见页面了。</p><ul>
-<li>注意,最后一步创建管理员帐户后,终端中会给一段链接,通过浏览器访问这个链接设置密码</li></ul><h2 id=4设置pleroma>4.设置pleroma</h2><p>设置文件在/etc/pleroma/config.exs
-官方文档要求改动这个文件,但是个人建议不要改动,直接备份一份到其他地方去。</p><ul>
-<li>使用这份设置文件绝对能打开pleroma,这一点非常重要。万一在Admin-FE输入了错误的设置导致pleroma无法打开,有它在还可以救一命</li></ul><p>后续建议都在数据库模式下于Admin-FE操作。</p><ul>
-<li><em>因为官方文档有关设置文件中各项参数的说明并不是很好理解,查阅他人留下的经验又很容易碰到过时的设置参数,导致出现错误却查无可查。而使用Admin-FE就不会遇到这种问题。即使不打算长期使用数据库模式,也只要从数据库导出一份设置文件就好</em></li></ul><p>另外,官方文档中的$ ./bin/pleroma_ctl
-都是指进入/opt/pleroma目录后的操作</p><hr>
-<p><font size=5><strong>关于数据库模式下,输出设置中可能存在的bug</strong></font></p><p>感谢@ShyKana@wuppo.allowed.org的帮助。</p><ul>
-<li>pleroma版本 2.3.0-1-gb221d77a</li></ul><blockquote>
-<p>实际使用发现,按照官方文档描述导出设置文件
+初见的话有点摸不着头脑,其实就是去编辑上一步操作的/etc/nginx/pleroma.conf</p><p>按文档走完,访问域名就可以看见页面了。</p><ul><li>注意,最后一步创建管理员帐户后,终端中会给一段链接,通过浏览器访问这个链接设置密码</li></ul><h2 id=4设置pleroma>4.设置pleroma</h2><p>设置文件在/etc/pleroma/config.exs
+官方文档要求改动这个文件,但是个人建议不要改动,直接备份一份到其他地方去。</p><ul><li>使用这份设置文件绝对能打开pleroma,这一点非常重要。万一在Admin-FE输入了错误的设置导致pleroma无法打开,有它在还可以救一命</li></ul><p>后续建议都在数据库模式下于Admin-FE操作。</p><ul><li><em>因为官方文档有关设置文件中各项参数的说明并不是很好理解,查阅他人留下的经验又很容易碰到过时的设置参数,导致出现错误却查无可查。而使用Admin-FE就不会遇到这种问题。即使不打算长期使用数据库模式,也只要从数据库导出一份设置文件就好</em></li></ul><p>另外,官方文档中的$ ./bin/pleroma_ctl
+都是指进入/opt/pleroma目录后的操作</p><hr><p><font size=5><strong>关于数据库模式下,输出设置中可能存在的bug</strong></font></p><p>感谢@ShyKana@wuppo.allowed.org的帮助。</p><ul><li>pleroma版本 2.3.0-1-gb221d77a</li></ul><blockquote><p>实际使用发现,按照官方文档描述导出设置文件
 执行$ ./bin/pleroma_ctl config migrate_from_db会出现错误,运行无效。</p></blockquote><p>根据@ShyKana@wuppo.allowed.org的建议
-可以尝试修改/etc/systemd/system/pleroma.service</p><blockquote>
-<p>找到ProtectSystem=full,改为ProtectSystem=true</p></blockquote><p>重新启动pleroma</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl daemon-reload systemctl restart pleroma
-</span></span></code></pre></td></tr></table></div></div><p>重新执行导出</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ ./bin/pleroma_ctl config migrate_from_db
-</span></span></code></pre></td></tr></table></div></div><p>可以发现/etc/pleroma目录下输出了文件 prod.exported_from_db.secret.exs</p><p>:fa-cog spin: <strong>随后需要移走这个文件,目录下存在该文件会导致pleroma无法启动。</strong></p><blockquote>
-<p>另外需要注意的是,只有在数据库模式下才可以导出设置文件,只有在设置文件模式下才可以导入数据库,导出的文件不可直接用于启动pleroma,请与config.exs合并之后再使用。
-报错请先检查一下目前运行的模式。</p></blockquote><blockquote>
-<p>检查方式即查找下文提到的config :pleroma, configurable_from_database</p></blockquote><p>备份好了就可以开始了</p><h3 id=41-修改pleroma为数据库模式>4.1 修改pleroma为数据库模式</h3><p>Admin-FE的大部分功能仅在数据库模式下有效。</p><blockquote>
-<p>修改/etc/pleroma/config.exs</p></blockquote><ul>
-<li>在最底下找到config :pleroma, configurable_from_database
-<ul>
-<li>将其改为true,重启pleroma</li></ul><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart pleroma
-</span></span></code></pre></td></tr></table></div></div></li></ul><h3 id=42-进入admin-fe设置>4.2 进入Admin-FE设置</h3><ul>
-<li>
-<p>浏览器进入 https://你的域名/pleroma/admin/
-登录管理员帐户,即可看到设置界面。</p></li><li>
-<p>大部分内容都是按需设置即可,可以省略大量查阅文档,磨配置文件的过程。</p></li><li>
-<p>如果不是很清楚的话,建议修改配置前使用vps的snapshots功能备份服务器,玩坏了也不用担心,整个恢复服务器就好。
+可以尝试修改/etc/systemd/system/pleroma.service</p><blockquote><p>找到ProtectSystem=full,改为ProtectSystem=true</p></blockquote><p>重新启动pleroma</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl daemon-reload systemctl restart pleroma
+</span></span></code></pre></td></tr></table></div></div><p>重新执行导出</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ ./bin/pleroma_ctl config migrate_from_db
+</span></span></code></pre></td></tr></table></div></div><p>可以发现/etc/pleroma目录下输出了文件 prod.exported_from_db.secret.exs</p><p>:fa-cog spin: <strong>随后需要移走这个文件,目录下存在该文件会导致pleroma无法启动。</strong></p><blockquote><p>另外需要注意的是,只有在数据库模式下才可以导出设置文件,只有在设置文件模式下才可以导入数据库,导出的文件不可直接用于启动pleroma,请与config.exs合并之后再使用。
+报错请先检查一下目前运行的模式。</p></blockquote><blockquote><p>检查方式即查找下文提到的config :pleroma, configurable_from_database</p></blockquote><p>备份好了就可以开始了</p><h3 id=41-修改pleroma为数据库模式>4.1 修改pleroma为数据库模式</h3><p>Admin-FE的大部分功能仅在数据库模式下有效。</p><blockquote><p>修改/etc/pleroma/config.exs</p></blockquote><ul><li>在最底下找到config :pleroma, configurable_from_database<ul><li>将其改为true,重启pleroma</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart pleroma
+</span></span></code></pre></td></tr></table></div></div></li></ul><h3 id=42-进入admin-fe设置>4.2 进入Admin-FE设置</h3><ul><li><p>浏览器进入 https://你的域名/pleroma/admin/
+登录管理员帐户,即可看到设置界面。</p></li><li><p>大部分内容都是按需设置即可,可以省略大量查阅文档,磨配置文件的过程。</p></li><li><p>如果不是很清楚的话,建议修改配置前使用vps的snapshots功能备份服务器,玩坏了也不用担心,整个恢复服务器就好。
 比如vultr就提供免费的snapshots,如果有这项功能的话务必用起来,一步操作一备份都没关系,这不是胆小,是安全至上(</p></li></ul><p>开启了Media proxy后不显示缩略图的话,可以尝试开启Media preview proxy</p><h3 id=43-部署媒体文件外置存储>4.3 部署媒体文件外置存储</h3><p>这是一个难点,官方文档和官方gitlab中的issues中确实有相关内容,但是不是过于老旧就是说明不清,特别是关于使用AWS以外的兼容S3存储该如何设置。
 当然,如果你的服务器没有存储方面的担忧,就可以跳过
-关于如何选择外置存储方面可以参考长毛象社区搭建详解第六章</p><hr>
-<p>这里以Scaleway为例</p><ul>
-<li>注册并创建一个Bucket,存储桶大小设置成75G就可以白嫖,岂不美哉(</li></ul><blockquote>
-<p>长毛象社区搭建详解第六章 要求储存桶的名称务必填写媒体服务的子域名。理论上来说并不是必须这么做,但是照做,避免不必要的坑。</p></blockquote><p>Visibility设置为 Private。网络上有些教程要求设置为Public,但是实际上并不需要设置为 Public,否则任何人都可以看到媒体文件列表。</p><ul>
-<li>获取所需的信息</li></ul><p>这里就照搬 长毛象社区搭建详解 了</p><p>注意这里的api key只会显示一次,请立即记录下来</p><p>接下来在Admin-FE中填写信息。</p><p>这是我的设置,直接套模板就行,media.shiina-rimo.cafe换成自己的域名,即之前填写的媒体服务的子域名
+关于如何选择外置存储方面可以参考长毛象社区搭建详解第六章</p><hr><p>这里以Scaleway为例</p><ul><li>注册并创建一个Bucket,存储桶大小设置成75G就可以白嫖,岂不美哉(</li></ul><blockquote><p>长毛象社区搭建详解第六章 要求储存桶的名称务必填写媒体服务的子域名。理论上来说并不是必须这么做,但是照做,避免不必要的坑。</p></blockquote><p>Visibility设置为 Private。网络上有些教程要求设置为Public,但是实际上并不需要设置为 Public,否则任何人都可以看到媒体文件列表。</p><ul><li>获取所需的信息</li></ul><p>这里就照搬 长毛象社区搭建详解 了</p><p>注意这里的api key只会显示一次,请立即记录下来</p><p>接下来在Admin-FE中填写信息。</p><p>这是我的设置,直接套模板就行,media.shiina-rimo.cafe换成自己的域名,即之前填写的媒体服务的子域名
 另外填上上一步获得的api key就好</p><p>官方文档的描述很难懂,特别是对于Truncated namespace的作用的说明模棱两可。但是Admin-FE上的描述就很合适。
 Bucket namespace的内容,即文件上传到存储桶的目录。如填写media,文件上传到/media/
-我是空着的,即直接上传到根目录。</p><p>接下来通过终端重启pleroma:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart pleroma
+我是空着的,即直接上传到根目录。</p><p>接下来通过终端重启pleroma:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl restart pleroma
 </span></span></code></pre></td></tr></table></div></div><h3 id=44-设置dns重定向>4.4 设置DNS重定向</h3><p>在cloudflare中添加一个DNS条目
 类型CNAME,名称即之前填写的媒体服务的子域名。目标指向Bucket Endpoint,可在scaleway存储桶页面Bucket Settings选项卡查询。</p><p>回到pleroma,试着传一个图片文件,并发出嘟文,看看是否正常
 如果有问题,可以试试删除Media proxy的Base URL看看是否恢复</p><p>一切正常,就大功告成!</p><p>补充:如需邮件功能,建议参考 技术小白如何搭建Mastodon实例 中的 邮件服务 章节设置邮箱,然后去Admin-FE的mailer中填写Pleroma.Emails.Mailer部分,Adapter选择STMP。</p><h2 id=5备份pleroma>5.备份pleroma</h2><p>pleroma需要备份的内容主要是数据库、设置文件、静态目录。
-官方文档提到的config/setup_db.psql,目前OTP版本似乎不存在</p><ul>
-<li>备份数据库
-参考官方文档:</li></ul><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo -Hu postgres pg_dump -d &lt;pleroma_db&gt; –format=custom -f &lt;/path/to/backup_location/pleroma.pgdump&gt;
-</span></span></code></pre></td></tr></table></div></div><ul>
-<li>上述命令中,“postgres”是PostgreSQL 默认管理员用户名,没有自行修改则不需改动
-<ul>
-<li>&lt;pleroma_db>pleroma的数据库名。</li><li>&lt;/path/to/backup_location/pleroma.pgdump>填写备份文件输出目录</li></ul></li></ul><p>数据库名默认pleroma,不知道的话可以按照以下方法查看:
-切换到数据库</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo -u postgres psql
-</span></span></code></pre></td></tr></table></div></div><p>查看所有用户</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\du
-</span></span></code></pre></td></tr></table></div></div><p>查看所有数据库</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\l 
+官方文档提到的config/setup_db.psql,目前OTP版本似乎不存在</p><ul><li>备份数据库
+参考官方文档:</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo -Hu postgres pg_dump -d &lt;pleroma_db&gt; –format=custom -f &lt;/path/to/backup_location/pleroma.pgdump&gt;
+</span></span></code></pre></td></tr></table></div></div><ul><li>上述命令中,“postgres”是PostgreSQL 默认管理员用户名,没有自行修改则不需改动<ul><li>&lt;pleroma_db>pleroma的数据库名。</li><li>&lt;/path/to/backup_location/pleroma.pgdump>填写备份文件输出目录</li></ul></li></ul><p>数据库名默认pleroma,不知道的话可以按照以下方法查看:
+切换到数据库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo -u postgres psql
+</span></span></code></pre></td></tr></table></div></div><p>查看所有用户</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\du
+</span></span></code></pre></td></tr></table></div></div><p>查看所有数据库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\l 
 </span></span></code></pre></td></tr></table></div></div><p>默认的数据库应该是pleroma
-退出</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\q 
-</span></span></code></pre></td></tr></table></div></div><p>完整的postgresql常用命令可以看<a href=https://mozillazg.com/2014/06/hello-postgresql.html# target=_blank rel="noopener noreffer">这里</a></p><ul>
-<li>复制输出文件pleroma.pgdump</li><li>复制目录及所有文件/etc/pleroma/,这里是设置文件存放目录</li><li>复制目录及所有文件/var/lib/pleroma/,这里是使用过程中上传文件、表情包等默认存放位置</li><li>(可选)复制/etc/nginx/sites-available/pleroma.conf</li></ul><p>因为除了Pleroma外操作很少,备份和恢复操作我大多是继续使用VPS的Snapshots功能 所以恢复方面未实际操作过,就不写了,链接<a href=https://docs-develop.pleroma.social/backend/administration/backup/ target=_blank rel="noopener noreffer">官方文档 </a></p></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2021-03-23</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md></div><div class=post-info-share>
-<span></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/>折腾笔记</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section></div><div class=post-nav><a href=/using/ class=prev rel=prev title><i class="fas fa-angle-left fa-fw"></i></a>
-<a href=/first_post/ class=next rel=next title=世界,您好!>世界,您好!<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>实在没什么东西</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>rimo</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script>
+退出</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>\q 
+</span></span></code></pre></td></tr></table></div></div><p>完整的postgresql常用命令可以看<a href=https://mozillazg.com/2014/06/hello-postgresql.html# target=_blank rel="noopener noreffer">这里</a></p><ul><li>复制输出文件pleroma.pgdump</li><li>复制目录及所有文件/etc/pleroma/,这里是设置文件存放目录</li><li>复制目录及所有文件/var/lib/pleroma/,这里是使用过程中上传文件、表情包等默认存放位置</li><li>(可选)复制/etc/nginx/sites-available/pleroma.conf</li></ul><p>因为除了Pleroma外操作很少,备份和恢复操作我大多是继续使用VPS的Snapshots功能 所以恢复方面未实际操作过,就不写了,链接<a href=https://docs-develop.pleroma.social/backend/administration/backup/ target=_blank rel="noopener noreffer">官方文档</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-03-23</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/>折腾笔记</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/using/ class=prev rel=prev title><i class="fas fa-angle-left fa-fw"></i></a>
+<a href=/first_post/ class=next rel=next title=世界,您好!>世界,您好!<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>实在没什么东西</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>rimo</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script>
 <script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js></script><script type=text/javascript src=/js/custom.js></script></body></html>
